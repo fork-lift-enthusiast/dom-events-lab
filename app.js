@@ -1,13 +1,11 @@
 /*-------------------------------- Constants --------------------------------*/
 const calculator = document.querySelector("#calculator");
 const display = document.querySelector(".display");
-
 /*-------------------------------- Variables --------------------------------*/
 let equation = [];
-/*------------------------ Cached Element References ------------------------*/
-
 /*----------------------------- Event Listeners -----------------------------*/
 calculator.addEventListener("click", (event) => {
+  // checks if the last item in the equation array, and the click event are operators and skips the rest of the code if they are
   if (
     ["*", "/", "-", "+"].includes(equation[equation.length - 1]) &&
     event.target.classList.contains("operator")
@@ -29,6 +27,3 @@ calculator.addEventListener("click", (event) => {
     equation = [];
   }
 });
-
-/*-------------------------------- Functions --------------------------------*/
-
